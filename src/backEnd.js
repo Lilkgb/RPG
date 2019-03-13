@@ -1,10 +1,11 @@
 export class Player {
-  constructor(name,chClass,hp,atk) {
+  constructor(name,chClass,hp,atk,items) {
     this.name = name;
     this.chClass = chClass;
     this.hp = hp;
     this.atk = atk;
     this.items = [];
+    this.turn = true;
   }
   setName(name) {
     this.name = name;
@@ -17,7 +18,7 @@ export class Player {
   playerAttack(Enemy) {
     console.log(`The Enemy HP was: ${Enemy.hp}`);
     console.log(`The player hits for: ${this.atk}`);
-    Player.hp -= this.atk;
+    Enemy.hp -= this.atk;
     console.log(`The Enemy is now: ${Enemy.hp}`);
   }
 
@@ -33,6 +34,7 @@ export class Enemy {
     this.name = name;
     this.hp = hp;
     this.atk = atk;
+    this.turn = false;
   }
   enenmyAttack(Player) {
     console.log(`The players HP was: ${Player.hp}`);

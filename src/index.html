@@ -4,7 +4,46 @@
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
+  <body class="test">
+    <h1>The Game</h1>
+    <div class="gameContainer">
+      <img class="menuBG" src="img/strange.gif" alt="">
+      <div class="gameStart">
+        <h1>Welcome to THE GAME</h1>
+        <p class="startBtn">Start Game</p>
+        <p class="settingBtn">Settings</p>
+        <p class="exit">Exit</p>
+      </div>
+      <div class="characterSet">
+        <div class="name">
+          <h1>TELL ME YOUR NAME PERSON!</h1>
+          <input type="text" id="playerName" placeholder="YOUR NAME MORTAL!">
+          <button class="nameSubmit" type="submit" name="button">Submit</button>
+        </div>
+      </div>
+      <div class="classSelect">
+        <h2>Welcome <span id="name"></span></h2>
+        <h1>CHOOSE YOUR CLASS MORTAL! YOU WONT SURVIVE!</h1>
+        <label for="warrior">
+        <input id="warrior"type="radio" name="class" value="Warrior">
+        <img src="./img/sword.png" alt="">
+        </label>
+        <label for="ranger">
+        <input id="ranger" type="radio" name="class" value="Ranger">
+        <img src="./img/arrow.png" alt="">
+        </label>
+        <label for="wizard">
+        <input id="wizard" type="radio" name="class" value="Wizard">
+        <img src="./img/wand.png" alt="">
+        </label>
+        <button type="click" name="submitClass">Continue</button>
+      </div>
+      <div class="gameArena">
+        <div class="encounter">
 
+        </div>
+
+      </div>
+    </div>
   </body>
 </html>
