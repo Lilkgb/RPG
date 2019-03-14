@@ -130,3 +130,16 @@ input[type="radio"] {
 input[type="radio"]:checked + img {
   opacity: 1;
 }
+
+.gameArena {
+  display: grid;
+  grid-area: 1 / 1 / -1 / -1;
+  background-color: darkgray;
+  grid-template-rows: 40px auto auto;
+  .menu {
+    grid-row: 1;
+    grid-column: 1;
+    display: grid;
+    background-color: black;
+  }
+}
