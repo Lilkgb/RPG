@@ -1,6 +1,7 @@
 
 import { Player } from './../src/backEnd.js';
 import { Enemy } from './../src/backEnd.js';
+import { encounter} from './../src/backEnd.js';
 
 
 
@@ -32,8 +33,23 @@ describe('Player', function() {
     let player1 = new Player("Player1", "Ranger", 10, 2);
     player1.playerAddItem('Knife');
     expect(player1.items).toEqual(['Knife']);
-  })
+  });
 
+  it('should add something to the players inventory when setting a class', function(){
+    let player1 = new Player("Player1", "Ranger", 10, 2);
+    player1.setClass('Ranger');
+    expect(player1.items).toEqual(['Bow & Arrows']);
+  });
+
+  it('should select an enemy from an array of enemies', function() {
+    let enemies = [];
+    enemies.push(new Enemy('Skeleton', 10, 2));
+    enemies.push(new Enemy('Rat', 6, 1));
+    enemies.push(new Enemy('Goblin', 12, 3));
+    let anEnemy = encounter(enemies);
+    expect(anEnemy).toBeGreaterThan(-1);
+    expect(anEnemy).toBeLessThan(enemies.length);
+  });
 
 });
 

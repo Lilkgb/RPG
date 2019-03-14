@@ -13,6 +13,13 @@ export class Player {
 
   setClass(chClass) {
     this.chClass = chClass;
+    if (this.chClass === 'Warrior') {
+      this.items.push('Knife');
+    } else if (this.chClass === 'Ranger') {
+      this.items.push('Bow & Arrows');
+    } else if (this.chClass === 'Wizard') {
+      this.items.push('Wand');
+    }
   }
 
   playerAttack(Enemy) {
@@ -43,3 +50,11 @@ export class Enemy {
     console.log(`The playersHP is now: ${Player.hp}`);
   }
 }
+
+export function encounter(enemyArray) {
+  let randomNumber = Math.floor(Math.random() * enemyArray.length);
+  console.log(randomNumber);
+  return randomNumber;
+}
+
+console.log(typeof encounter(['a', 'b']));

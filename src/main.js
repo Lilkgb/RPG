@@ -1,7 +1,13 @@
 import $ from 'jquery';
 import { Player } from './backEnd.js';
 import { Enemy } from './backEnd.js';
-import './input.scss'
+import './input.scss';
+
+let enemies = [];
+enemies.push(new Enemy('Skeleton', 10, 2));
+enemies.push(new Enemy('Rat', 6, 1));
+enemies.push(new Enemy('Goblin', 12, 3));
+console.log(enemies);
 
 $(document).ready(function() {
   $(".classSelect").hide();
@@ -22,10 +28,10 @@ $(document).ready(function() {
     $('#name').text(name + '!');
     $(".classSelect").show();
   });
-  $("input[type='radio']").click(function(){
+  $(".form").submit(function(event){
+    event.preventDefault();
     let playerClass = $("input[name='class']:checked").val();
     player1.setClass(playerClass);
-    player1.items.push('KNIFE');
     console.log(player1);
   })
 });
